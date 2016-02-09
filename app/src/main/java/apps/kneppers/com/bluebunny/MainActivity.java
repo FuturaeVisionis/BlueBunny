@@ -9,23 +9,22 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends Activity implements OnClickListener {
-    // private string tags is obsolete!!
-    private MalibuCountDownTimer countDownTimer;
-    private long timeElapsed;
-    private boolean timerHasStarted = false;
-    private Button startB;
-    private TextView text;
-    private TextView timeElapsedView;
 
-    private final long startTime = 50000;
-    private final long interval = 1000;
+    MalibuCountDownTimer countDownTimer;
+    long timeElapsed;
+    boolean timerHasStarted = false;
+    Button startB;
+    TextView text;
+    TextView timeElapsedView;
+
+    long startTime = 50000;
+    long interval = 1000;
 
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        
         startB = (Button) this.findViewById(R.id.button);
         startB.setOnClickListener(this);
 
@@ -37,7 +36,8 @@ public class MainActivity extends Activity implements OnClickListener {
 
     @Override
     public void onClick(View v) {
-        if (!timerHasStarted) {
+        if (!timerHasStarted)
+        {
             countDownTimer.start();
             timerHasStarted = true;
             startB.setText("Start");
@@ -63,6 +63,7 @@ public class MainActivity extends Activity implements OnClickListener {
 
         @Override
         public void onTick(long millisUntilFinished) {
+
             text.setText("Time remain:" + millisUntilFinished);
             timeElapsed = startTime - millisUntilFinished;
             timeElapsedView.setText("Time Elapsed: " + String.valueOf(timeElapsed));
