@@ -8,9 +8,8 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class MainActivity extends Activity implements OnClickListener
-{
-    private String tags;
+public class MainActivity extends Activity implements OnClickListener {
+    // private string tags is obsolete!!
     private MalibuCountDownTimer countDownTimer;
     private long timeElapsed;
     private boolean timerHasStarted = false;
@@ -23,10 +22,10 @@ public class MainActivity extends Activity implements OnClickListener
 
     /** Called when the activity is first created. */
     @Override
-    public void onCreate(Bundle savedInstanceState)
-    {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        
         startB = (Button) this.findViewById(R.id.button);
         startB.setOnClickListener(this);
 
@@ -37,16 +36,12 @@ public class MainActivity extends Activity implements OnClickListener
     }
 
     @Override
-    public void onClick(View v)
-    {
-        if (!timerHasStarted)
-        {
+    public void onClick(View v) {
+        if (!timerHasStarted) {
             countDownTimer.start();
             timerHasStarted = true;
             startB.setText("Start");
-        }
-        else
-        {
+        } else {
             countDownTimer.cancel();
             timerHasStarted = false;
             startB.setText("RESET");
@@ -54,24 +49,20 @@ public class MainActivity extends Activity implements OnClickListener
     }
 
     // CountDownTimer class
-    public class MalibuCountDownTimer extends CountDownTimer
-    {
+    public class MalibuCountDownTimer extends CountDownTimer {
 
-        public MalibuCountDownTimer(long startTime, long interval)
-        {
+        public MalibuCountDownTimer(long startTime, long interval) {
             super(startTime, interval);
         }
 
         @Override
-        public void onFinish()
-        {
+        public void onFinish() {
             text.setText("Time's up!");
             timeElapsedView.setText("Time Elapsed: " + String.valueOf(startTime));
         }
 
         @Override
-        public void onTick(long millisUntilFinished)
-        {
+        public void onTick(long millisUntilFinished) {
             text.setText("Time remain:" + millisUntilFinished);
             timeElapsed = startTime - millisUntilFinished;
             timeElapsedView.setText("Time Elapsed: " + String.valueOf(timeElapsed));
