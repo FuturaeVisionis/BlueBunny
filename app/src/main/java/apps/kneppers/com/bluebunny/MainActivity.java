@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 public class MainActivity extends Activity implements OnClickListener
 {
+    private String tags;
     private MalibuCountDownTimer countDownTimer;
     private long timeElapsed;
     private boolean timerHasStarted = false;
