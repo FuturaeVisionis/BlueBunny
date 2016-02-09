@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends Activity implements OnClickListener {
+    
+    //I like programming with Android.
 
     MalibuCountDownTimer countDownTimer;
     long timeElapsed;
