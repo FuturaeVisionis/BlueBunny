@@ -10,8 +10,7 @@ import android.widget.TextView;
 
 public class MainActivity extends Activity implements OnClickListener {
     
-    //I like programming with Android.
-    // Without Java, I can't programme Android Apps!!
+    //coding is like mathematics. You need to practice and practice!!
 
     MalibuCountDownTimer countDownTimer;
     long timeElapsed;
