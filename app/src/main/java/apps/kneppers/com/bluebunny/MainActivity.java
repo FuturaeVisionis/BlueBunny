@@ -11,6 +11,7 @@ import android.widget.TextView;
 public class MainActivity extends Activity implements OnClickListener {
     
     //coding is like mathematics. You need to practice and practice!!
+    //that's absolutely correct Hoss! No practice, means no coding. 
 
     MalibuCountDownTimer countDownTimer;
     long timeElapsed;
